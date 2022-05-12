@@ -51,7 +51,6 @@ else
 
 app.UseHttpsRedirection();
 
-
 app.UseBlazorFrameworkFiles();
 app.UseStaticFiles();
 

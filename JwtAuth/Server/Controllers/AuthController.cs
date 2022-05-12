@@ -24,13 +24,17 @@ namespace JwtAuth.Server.Controllers
                 Id = 1,
                 FirstName = "John",
                 LastName = "Smith",
-                Email = loginRequest.Email
+                Email = loginRequest.Email,
+                Role = Roles.User.ToString()
             };
             var usersClaims = new[]
             {
                     new Claim(ApiConstants.JwtRegisteredClaimNamesUserId,  user.Id.ToString()),
-                    new Claim(ApiConstants.JwtRegisteredClaimNamesUserEmail,  user.Email)
+                    new Claim(ApiConstants.JwtRegisteredClaimNamesUserEmail,  user.Email),
+                    new Claim(ClaimTypes.Role,  user.Role)
             };
+
+            //Add role
 
             var jwtToken = _authService.GenerateAccessToken(usersClaims);
 

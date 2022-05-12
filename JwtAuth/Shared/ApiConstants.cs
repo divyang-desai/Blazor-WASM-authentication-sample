@@ -10,5 +10,6 @@ namespace JwtAuth.Shared
     {
         public const string JwtRegisteredClaimNamesUserId = "uid";
         public const string JwtRegisteredClaimNamesUserEmail = "ueml";
+        public const string JwtRegisteredClaimNamesUserRole = "urid";
     }
 }

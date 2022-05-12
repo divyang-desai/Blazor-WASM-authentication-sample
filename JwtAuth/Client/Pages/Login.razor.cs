@@ -18,7 +18,7 @@ namespace JwtAuth.Client.Pages
         {
             ShowAuthError = false;
             var result = await AuthenticationService.Login(_userForAuthentication);
-            if (string.IsNullOrEmpty(result.AccessToken))
+            if (!result.Success)
             {
                 Error = "This is some error";
                 ShowAuthError = true;

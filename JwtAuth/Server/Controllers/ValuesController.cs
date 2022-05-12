@@ -10,9 +10,12 @@ namespace JwtAuth.Server.Controllers
         // GET: api/<ValuesController>
         [Authorize]
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            //return BadRequest("This is not working");
+
+            var response = new string[] { "value1", "value2" };
+            return Ok(response);
         }
 
         // GET api/<ValuesController>/5

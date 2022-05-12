@@ -4,8 +4,11 @@ namespace JwtAuth.Client.Services
 {
     public interface IAuthenticationService
     {
-        Task<LoginResponse> Login(LoginRequest userForAuthentication);
+        
+        Task<Response<LoginResponse>> Login(LoginRequest userForAuthentication);
 
         Task Logout();
+
+        //Task SendAuthenticatedRequest();
     }
 }
